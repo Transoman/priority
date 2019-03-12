@@ -1,0 +1,33 @@
+.tracking-form
+  .form-group
+    position: relative
+    display: flex
+    align-items: center
+  input
+    width: 100%
+    padding: 10px 0
+    margin-right: 25px
+    background: none
+    border: none
+    border-bottom: 1px solid $accent
+    font-size: 48px
+    font-weight: 400
+    color: #fff
+    &::placeholder
+      color: inherit
+    &:focus
+      outline: none
+  button[type="submit"]
+    flex-shrink: 0
+    width: 50px
+    height: 55px
+    background-color: $accent
+    color: #fff
+    font-size: 18px
+    border: 0
+    padding: 0
+    +trans
+    &:hover
+      background-color: lighten($accent, 5%)
+    &:focus
+      outline: none

@@ -1,0 +1,85 @@
+.hero
+  position: relative
+  z-index: 1
+  &::before
+    content: ''
+    position: absolute
+    top: -675px
+    right: -200px
+    width: 1400px
+    height: 1400px
+    border-radius: 130px
+    background-color: $accent
+    transform: rotate(-24deg)
+    z-index: -2
+  &::after
+    content: ''
+    position: absolute
+    top: -700px
+    right: -165px
+    width: 1400px
+    height: 1400px
+    border-radius: 130px
+    background-color: $hero-shape-color
+    transform: rotate(-30deg)
+    z-index: -2
+  &__slider
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    min-height: 100%
+    z-index: 1
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      background-image: linear-gradient($hero-bg-color 40%, rgba(#fff, 0) 100%)
+      z-index: -1
+    &-item
+      background:
+        repeat: no-repeat
+        position: top center
+        size: cover
+      opacity: 0.2
+      &.swiper-slide-active
+        opacity: 0.2 !important
+  &__wrap
+    position: relative
+    padding: 210px 0 40px
+    z-index: 1
+  &__content
+    h1
+      margin-bottom: 20px
+      font-family: $ws-font
+      font-size: 72px
+      font-weight: 300
+      line-height: 1
+      color: #fff
+      strong
+        display: block
+        margin-top: 20px
+        font-family: $ttl-font
+        text-transform: uppercase
+    p
+      font-size: 20px
+      color: #fff
+  &__tracking-form
+    margin: 240px 0 100px 50px
+  &__cta
+    color: #fff
+    p
+      margin-bottom: 20px
+      font-size: 20px
+      line-height: 1.5
+    &-title
+      margin-bottom: 20px
+    &-link
+      font-family: $ws-font
+      font-weight: 500
+      color: $accent
+      text-decoration: underline

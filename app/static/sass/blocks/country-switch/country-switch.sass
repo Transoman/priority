@@ -1,0 +1,65 @@
+.country-switch
+  position: relative
+  flex-shrink: 0
+  &:hover
+    .country-switch
+      &__head
+        background-color: $dropdown-color
+      &__body
+        opacity: 1
+        visibility: visible
+  &__head
+    padding: 20px 20px 20px 30px
+    cursor: pointer
+    white-space: nowrap
+    +trans
+    img
+      +size(24px)
+      border: 1px solid #fff
+      border-radius: 50%
+    .fas
+      margin-left: 10px
+      font-size: 12px
+      color: $header-desc-color
+  &__body
+    position: absolute
+    top: 100%
+    left: 0
+    width: 270px
+    padding: 30px
+    background-color: $dropdown-color
+    opacity: 0
+    visibility: hidden
+    +trans
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+  &__item
+    margin-bottom: 10px
+    &:last-child
+      margin-bottom: 0
+    img
+      +size(24px)
+      margin-right: 45px
+      border-radius: 50%
+      border: 1px solid transparent
+    &.active
+      img
+        border-color: #fff
+      .country-switch
+        &__link
+          color: $accent
+          text-decoration: underline
+          &::after
+            content: '\f00c'
+            font-family: $fa
+            font-size: 12px
+            font-weight: 900
+            color: $accent
+            text-decoration: none
+            display: inline-block
+            margin-left: 10px
+  &__link
+    font-size: 16px
+    font-weight: 400

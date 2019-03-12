@@ -1,0 +1,58 @@
+.swiper-btns
+  position: absolute
+  bottom: 0
+  z-index: 1
+  left: 0
+  right: 0
+  display: flex
+  justify-content: center
+  align-items: center
+  .swiper-button-next,
+  .swiper-button-prev
+    position: relative
+    left: auto
+    right: auto
+    margin: 0 5px
+
+.swiper-button-next,
+.swiper-button-prev
+  width: 42px
+  height: 42px
+  margin-top: -16px
+  border-radius: 50%
+  background: #fff
+  border: 2px solid $border-slider-btn-color
+  +trans
+  &:focus
+    outline: none
+  //&::before
+  //  content: ''
+  //  position: absolute
+  //  top: -2px
+  //  right: -2px
+  //  bottom: -2px
+  //  left: -2px
+  //  border-radius: inherit
+  //  background-color: $border-slider-btn-color
+    z-index: -1
+  &::after
+    content: ''
+    font-family: $fa
+    font-size: 16px
+    color: $dark-gray
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+.swiper-button-prev
+  left: 0
+  &::after
+    content: '\f053'
+.swiper-button-next
+  right: 0
+  &::after
+    content: '\f054'
+
+
+.bg-home-wrap
+  background: url('images/general/home-bg.png') no-repeat center top / cover

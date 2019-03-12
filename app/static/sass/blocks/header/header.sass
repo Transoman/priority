@@ -1,0 +1,41 @@
+.header
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  padding: 15px 0
+  border-bottom: 1px solid rgba(#fff, 0.1)
+  z-index: 10
+  +trans
+  .container
+    position: relative
+    display: flex
+    align-items: center
+    & > *
+      flex-shrink: 0
+  &__logo
+    margin-right: 185px
+    +r(1200)
+      margin-right: 50px
+    +r(992)
+      max-width: 120px
+    +r(576)
+      margin-right: 30px
+  &__country-switch
+    margin-right: 10px
+    +r(767)
+      margin-right: 30px
+    +r(576)
+      display: none
+  &__phone
+    margin-right: 180px
+    +r(1200)
+      margin-right: 110px
+    +r(992)
+      margin-right: 50px
+    +r(767)
+      display: none
+  &__user-menu
+    +r(576)
+      margin-right: 60px
+      margin-left: auto

@@ -1,0 +1,134 @@
+.nav
+  position: fixed
+  top: 0
+  right: 0
+  height: 100%
+  width: 470px
+  padding: 55px 25px 55px 100px
+  background-color: $dropdown-color
+  overflow-y: auto
+  z-index: 10
+  +trans
+  transform: translateX(100%)
+  &.open
+    transform: translateX(0)
+  &__top
+    text-align: right
+  &__close
+    font-weight: 400
+    color: $nav-close-color
+    background: none
+    border: 0
+    cursor: pointer
+    +trans
+    &:hover, &:focus
+      color: $accent
+      outline: none
+  &__list-wrap
+    margin-top: 70px
+    //height: 450px
+  &__country-switch
+    display: none
+    margin: 30px 0
+    .country-switch
+      &__head
+        display: none
+      &__body
+        position: static
+        top: auto
+        left: auto
+        opacity: 1
+        visibility: visible
+        padding: 0
+        width: auto
+      &__item
+        img
+          margin-right: 10px
+  &__phone
+    display: none
+
+.nav-list
+  margin: 0
+  padding: 0
+  list-style: none
+  li
+    margin-bottom: 10px
+    &:last-child
+      margin-bottom: 0
+    &.menu-item-has-children
+      > a
+        color: $accent
+        position: relative
+        &::after
+          content: '\f0d7'
+          font-family: $fa
+          font-weight: 900
+          font-size: 18px
+          line-height: 1.5
+          margin-left: 10px
+          vertical-align: text-top
+  a
+    font-size: 24px
+    text-transform: uppercase
+
+.sub-menu
+  margin: 10px 0 20px 20px
+  padding: 0
+  list-style: none
+  li
+    margin-bottom: 5px
+    &:last-child
+      margin-bottom: 0
+  a
+    font-size: 18px
+    text-transform: none
+    &:hover
+      text-decoration: underline
+
+.nav-toggle
+  position: absolute
+  right: 55px
+  top: 50%
+  transform: translateY(-50%)
+  width: 28px
+  height: 22px
+  padding: 0
+  margin: 0
+  outline: none
+  border: none
+  background: none
+  z-index: 1
+  cursor: pointer
+  +trans
+  +r(992)
+    right: 15px
+  &:hover
+    .nav-toggle
+      &__line
+        width: 100%
+  &:focus
+    outline: none
+  &__line
+    position: relative
+    display: block
+    height: 3px
+    background: #fff
+    margin-bottom: 3px
+    +trans
+    &:last-child
+      margin-bottom: 0
+    &:nth-child(1)
+      width: 16px
+    &:nth-child(2)
+      width: 24px
+    &:nth-child(3)
+      width: 16px
+  //&.active
+  //  .nav-toggle__line
+  //    background: transparent
+  //    &::after
+  //      top: 0
+  //      transform: rotate(45deg)
+  //    &::before
+  //      top: 0
+  //      transform: rotate(-45deg)

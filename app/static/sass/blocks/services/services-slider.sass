@@ -1,0 +1,64 @@
+.services-slider
+  padding-bottom: 125px
+  .swiper-button-next,
+  .swiper-button-prev
+    background: none
+    border: 2px solid #fff
+    &::before
+      display: none
+    &:hover, &:focus
+      background-color: #fff
+      border-color: $accent
+  &__img
+    &-wrap
+      width: 640px
+      position: relative
+      margin-bottom: 70px
+      &::after
+        content: ''
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        background-image: linear-gradient(-45deg, rgba($polar, 1) 8%, rgba($polar, 0) 40%, rgba(#fff, 0))
+  &__more
+    font-weight: 500
+    &-label
+      margin-right: 30px
+      font-size: 14px
+      color: $regent-gray
+      &::before
+        content: ''
+        display: inline-block
+        vertical-align: middle
+        width: 100px
+        height: 2px
+        background-color: $accent
+        margin-right: 50px
+    a
+      color: $tuna
+      text-transform: uppercase
+      text-decoration: underline
+      &:hover, &:focus
+        color: $accent
+        text-decoration: none
+  &__content
+    padding-top: 320px
+    font-weight: 400
+    p
+      line-height: 1.5
+      &:last-child
+        margin-bottom: 0
+    &-head
+      display: flex
+      align-items: center
+      margin-bottom: 35px
+  &__icon
+    width: 100px
+    height: 100px
+    flex-shrink: 0
+    margin-right: 50px
+  &__title
+    margin: 0
+    line-height: 1.14
