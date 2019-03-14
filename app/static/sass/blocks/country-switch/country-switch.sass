@@ -1,6 +1,7 @@
 .country-switch
   position: relative
   flex-shrink: 0
+  z-index: 1
   &:hover
     .country-switch
       &__head
@@ -30,6 +31,7 @@
     background-color: $dropdown-color
     opacity: 0
     visibility: hidden
+    z-index: 1
     +trans
   &__list
     margin: 0

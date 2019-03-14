@@ -1,0 +1,43 @@
+.widget
+  margin-bottom: 30px
+  color: #fff
+  &-title
+    margin-bottom: 35px
+    font-family: $ws-font
+    font-size: 30px
+    font-weight: 300
+    text-transform: uppercase
+    color: $accent
+    +r(576)
+      margin-bottom: 20px
+      font-size: 20px
+      position: relative
+      &::after
+        content: '\f078'
+        font-family: $fa
+        position: absolute
+        right: 0
+        font-size: 16px
+        +trans
+      &.active
+        &::after
+          transform: rotate(180deg)
+    & + div
+      +r(576)
+        display: none
+  ul
+    margin: 0
+    padding: 0
+    list-style: none
+    li
+      margin-bottom: 10px
+      &:last-child
+        margin-bottom: 0
+    a
+      font-weight: 400
+      color: #fff
+      &:hover, &:focus
+        color: $accent
+      .fab
+        color: $accent
+        margin-right: 5px

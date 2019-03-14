@@ -1,10 +1,16 @@
 .services-slider-thumb
-  width: 470px
+  max-width: 470px
   margin: 0
   &__wrap
     position: relative
-    width: 570px
+    max-width: 570px
     padding: 0 50px
+    +r(992)
+      margin: 0 auto 60px
+    +r(767)
+      max-width: none
+    +r(576)
+      margin-bottom: 40px
   &__item
     display: flex
     align-items: center
@@ -12,10 +18,27 @@
     padding: 45px 30px 65px
     cursor: pointer
     +trans
+    +r(992)
+      padding: 45px 30px
+    +r(576)
+      flex-direction: column
+      padding: 25px 15px
+      text-align: center
     &.active
       background-color: $accent
+      .services-slider-thumb
+        &__icon-wrap
+          background-color: #fff
+
   &__icon
-    margin-right: 15px
+    &-wrap
+      flex-shrink: 0
+      margin-right: 15px
+      padding: 5px
+      border-radius: 50%
+      +trans
+      +r(576)
+        margin: 0 0 15px
   &__title
     font-weight: 500
     line-height: 1.4

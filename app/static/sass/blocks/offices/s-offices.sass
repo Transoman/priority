@@ -1,0 +1,98 @@
+.s-offices
+  padding-top: 70px
+  padding-bottom: 95px
+  +r(992)
+    text-align: center
+  .section-title
+    +r(992)
+      margin-bottom: 50px
+  &__list
+    .select2-container
+      &:focus
+        outline: none
+      .selection
+        &:focus
+          outline: none
+      &--default
+        .select2-selection--single
+          height: 56px
+          padding: 15px 60px 15px 20px
+          background-color: $input-bg
+          color: #fff
+          font-weight: 400
+          border: 0
+          border-radius: 5px
+          +trans
+          &:hover, &:focus
+            background-color: lighten($input-bg, 5%)
+            outline: none
+          .select2-selection
+            &__rendered
+              padding: 0
+              color: #fff
+            &__placeholder
+              color: #fff
+            &__arrow
+              top: 0
+              right: -1px
+              width: 50px
+              height: 100%
+              background-color: $accent
+              border-radius: 0 5px 5px 0
+              b
+                height: auto
+                width: auto
+                border: 0
+                margin: 0
+                transform: translate(-50%, -50%)
+                +trans
+                &::before
+                  content: '\f078'
+                  font-family: $fa
+                  color: #fff
+                  font-size: 18px
+        &.select2-container--open
+          .select2-selection--single
+            .select2-selection
+              &__arrow
+                border-radius: 0 5px 0 0
+                b
+                  transform: translate(-50%, -50%) rotate(180deg)
+  &__select
+    max-width: 470px
+    width: 100%
+  &__map
+    margin-top: 40px
+    text-align: center
+    img
+      max-width: 1400px
+      width: 100%
+  &__link
+    position: relative
+    display: block
+    max-width: 270px
+    margin: -50px auto 0
+    padding: 15px 60px 15px 30px
+    background-color: $input-bg
+    border-radius: 5px
+    text-transform: uppercase
+    color: #fff
+    text-align: left
+    +r(992)
+      margin-top: 20px
+    &::after
+      content: '\f054'
+      font-family: $fa
+      position: absolute
+      right: -1px
+      top: 0
+      display: flex
+      justify-content: center
+      align-items: center
+      height: 100%
+      width: 50px
+      background-color: $accent
+      border-radius: 0 5px 5px 0
+    &:hover, &:focus
+      background-color: $accent
+      color: #fff

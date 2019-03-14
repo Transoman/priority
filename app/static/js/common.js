@@ -1,5 +1,21 @@
 jQuery(document).ready(function($) {
 
+  // Fixed Header
+  var fixedHeader = function() {
+    if($(this).scrollTop() > 10) {
+      $('.header').addClass('fixed');
+    }
+    else {
+      $('.header').removeClass('fixed');
+    }
+  }
+
+  fixedHeader();
+
+  $(window).scroll(function() {
+    fixedHeader();
+  });
+
   // Toggle nav menu
   $('.nav-toggle').on('click', function (e) {
     e.preventDefault();
@@ -32,10 +48,16 @@ jQuery(document).ready(function($) {
     navigation: {
       nextEl: '.services-slider-thumb__next',
       prevEl: '.services-slider-thumb__prev',
+    },
+    breakpoints: {
+      767: {
+        slidesPerView: 1
+      }
     }
   });
 
   var servicesSlider = new Swiper ('.services-slider', {
+    spaceBetween: 50,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -64,4 +86,40 @@ jQuery(document).ready(function($) {
     $(servicesSliderThumb.$wrapperEl).children().eq(currentItem).addClass('active');
   });
 
+  // Parallax
+  function simpleParallax(intensity, element) {
+    $(window).scroll(function() {
+      var scrollTop = $(window).scrollTop();
+      var imgPos = scrollTop / intensity + 'px';
+      element.css('transform', 'translateY(' + imgPos + ')');
+    });
+  }
+
+  simpleParallax(-5, $('.parallax-1'));
+
+  // Select2
+  $('.s-offices__select').select2({
+    placeholder: 'PW offices'
+  });
+
+  // Widget Slide
+  var mediaFooterToggle = window.matchMedia('(max-width: 576px)');
+
+  var mediaChecker = function() {
+    if (mediaFooterToggle.matches) {
+      footerToggle();
+    }
+    else {
+      $('.widget-title').off('click').removeClass('active').next().removeAttr('style');
+    }
+  }
+
+  var footerToggle = function() {
+    $('.widget-title').click(function() {
+      $(this).toggleClass('active').next().slideToggle();
+    });
+  }
+
+  mediaFooterToggle.addListener(mediaChecker);
+  mediaChecker();
 });

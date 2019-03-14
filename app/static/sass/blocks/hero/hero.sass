@@ -1,28 +1,45 @@
 .hero
   position: relative
   z-index: 1
-  &::before
-    content: ''
+  overflow: hidden
+  &__shape-container
     position: absolute
-    top: -675px
-    right: -200px
-    width: 1400px
-    height: 1400px
-    border-radius: 130px
-    background-color: $accent
-    transform: rotate(-24deg)
-    z-index: -2
-  &::after
-    content: ''
-    position: absolute
-    top: -700px
-    right: -165px
-    width: 1400px
-    height: 1400px
-    border-radius: 130px
-    background-color: $hero-shape-color
-    transform: rotate(-30deg)
-    z-index: -2
+    top: 0
+    left: 0
+    right: 0
+    height: 100%
+    &::before
+      content: ''
+      position: absolute
+      bottom: -35px
+      left: 57.4%
+      width: 1400px
+      height: 1400px
+      border-radius: 130px
+      background-color: $accent
+      transform: rotate(-24deg)
+      transform-origin: 0 100%
+      z-index: -2
+      +r(992)
+        left: 34.4%
+      +r(480)
+        left: 23.4%
+    &::after
+      content: ''
+      position: absolute
+      bottom: -45px
+      left: 63%
+      width: 1400px
+      height: 1400px
+      border-radius: 130px
+      background-color: $hero-shape-color
+      transform: rotate(-30deg)
+      transform-origin: 0 100%
+      z-index: -2
+      +r(992)
+        left: 43%
+      +r(480)
+        left: 38%
   &__slider
     position: absolute
     top: 0
@@ -50,16 +67,25 @@
         opacity: 0.2 !important
   &__wrap
     position: relative
-    padding: 210px 0 40px
+    padding: 210px 0 55px
     z-index: 1
+    +r(992)
+      padding-top: 160px
   &__content
+    +r(992)
+      margin-bottom: 50px
+      text-align: center
     h1
-      margin-bottom: 20px
+      margin-bottom: 30px
       font-family: $ws-font
       font-size: 72px
       font-weight: 300
       line-height: 1
       color: #fff
+      +r(1200)
+        font-size: 52px
+      +r(576)
+        font-size: 42px
       strong
         display: block
         margin-top: 20px
@@ -68,18 +94,47 @@
     p
       font-size: 20px
       color: #fff
+      +r(576)
+        font-size: 16px
   &__tracking-form
-    margin: 240px 0 100px 50px
+    margin: 265px 0 100px 50px
+    +r(1499)
+      margin: 155px 0 70px 50px
+    +r(1200)
+      margin: 90px 0 50px 50px
+    +r(992)
+      margin: 0 0 50px
   &__cta
+    position: relative
+    max-width: 270px
+    margin-left: 100px
     color: #fff
+    z-index: 1
+    +r(1200)
+      margin-left: 80px
+    +r(992)
+      text-align: center
+      margin: 0 auto
     p
       margin-bottom: 20px
       font-size: 20px
       line-height: 1.5
+      +r(1200)
+        font-size: 16px
     &-title
-      margin-bottom: 20px
+      margin-bottom: 25px
+      +r(1200)
+        margin-bottom: 15px
     &-link
       font-family: $ws-font
       font-weight: 500
       color: $accent
       text-decoration: underline
+    &-img
+      position: absolute
+      z-index: -1
+      bottom: -30px
+      right: 0
+      +r(992)
+        bottom: -60px
+        right: -30px

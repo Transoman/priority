@@ -1,5 +1,9 @@
 .services-slider
   padding-bottom: 125px
+  +r(1200)
+    padding-bottom: 90px
+  +r(576)
+    padding-bottom: 70px
   .swiper-button-next,
   .swiper-button-prev
     background: none
@@ -8,12 +12,18 @@
       display: none
     &:hover, &:focus
       background-color: #fff
-      border-color: $accent
   &__img
     &-wrap
       width: 640px
       position: relative
       margin-bottom: 70px
+      +r(1200)
+        width: 500px
+        margin-bottom: 30px
+      +r(992)
+        width: auto
+        img
+          width: 100%
       &::after
         content: ''
         position: absolute
@@ -24,10 +34,15 @@
         background-image: linear-gradient(-45deg, rgba($polar, 1) 8%, rgba($polar, 0) 40%, rgba(#fff, 0))
   &__more
     font-weight: 500
+    +r(576)
+      text-align: center
     &-label
       margin-right: 30px
       font-size: 14px
       color: $regent-gray
+      +r(576)
+        display: block
+        margin: 0 0 10px
       &::before
         content: ''
         display: inline-block
@@ -36,6 +51,8 @@
         height: 2px
         background-color: $accent
         margin-right: 50px
+        +r(576)
+          display: none
     a
       color: $tuna
       text-transform: uppercase
@@ -46,6 +63,13 @@
   &__content
     padding-top: 320px
     font-weight: 400
+    +r(1499)
+      padding-top: 200px
+    +r(1200)
+      padding-top: 130px
+    +r(992)
+      padding-top: 0
+      margin-bottom: 30px
     p
       line-height: 1.5
       &:last-child
@@ -54,11 +78,21 @@
       display: flex
       align-items: center
       margin-bottom: 35px
+      +r(576)
+        margin-bottom: 20px
   &__icon
     width: 100px
     height: 100px
     flex-shrink: 0
     margin-right: 50px
+    +r(1200)
+      width: 80px
+      height: 80px
+      margin-right: 30px
+    +r(576)
+      width: 40px
+      height: 40px
+      margin-right: 15px
   &__title
     margin: 0
     line-height: 1.14

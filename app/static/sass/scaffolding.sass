@@ -20,7 +20,7 @@
 
 /* Common styles */
 html
-  height: 100%
+  //height: 100%
   overflow-x: hidden
 
 body
@@ -34,6 +34,8 @@ body
   line-height: 1.25
   color: $main-color
   overflow-x: hidden
+  +r(1200)
+    font-size: 16px
 
 img
   max-width: 100%
@@ -54,10 +56,19 @@ h2
   font-size: 56px
   font-weight: 300
   color: $header-color
+  +r(1200)
+    font-size: 46px
+  +r(576)
+    font-size: 32px
 
 h3
   font-size: 36px
   font-weight: 400
+  +r(576)
+    font-size: 26px
+
+strong, b
+  font-weight: 700
 
 section
   position: relative

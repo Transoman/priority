@@ -10,6 +10,10 @@
   z-index: 10
   +trans
   transform: translateX(100%)
+  +smooth-scroll
+  +r(576)
+    width: 320px
+    padding: 55px 25px
   &.open
     transform: translateX(0)
   &__top
@@ -26,10 +30,11 @@
       outline: none
   &__list-wrap
     margin-top: 70px
-    //height: 450px
   &__country-switch
     display: none
     margin: 30px 0
+    +r(767)
+      display: block
     .country-switch
       &__head
         display: none
@@ -46,6 +51,9 @@
           margin-right: 10px
   &__phone
     display: none
+    +r(767)
+      display: flex
+      margin-top: 30px
 
 .nav-list
   margin: 0
@@ -123,12 +131,3 @@
       width: 24px
     &:nth-child(3)
       width: 16px
-  //&.active
-  //  .nav-toggle__line
-  //    background: transparent
-  //    &::after
-  //      top: 0
-  //      transform: rotate(45deg)
-  //    &::before
-  //      top: 0
-  //      transform: rotate(-45deg)

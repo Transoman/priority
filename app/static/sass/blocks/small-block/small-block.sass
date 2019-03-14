@@ -1,3 +1,5 @@
+@import 'parallax'
+
 .swiper-btns
   position: absolute
   bottom: 0
@@ -18,23 +20,14 @@
 .swiper-button-prev
   width: 42px
   height: 42px
-  margin-top: -16px
+  margin-top: -21px
   border-radius: 50%
   background: #fff
   border: 2px solid $border-slider-btn-color
   +trans
-  &:focus
+  &:hover, &:focus
+    border-color: $accent
     outline: none
-  //&::before
-  //  content: ''
-  //  position: absolute
-  //  top: -2px
-  //  right: -2px
-  //  bottom: -2px
-  //  left: -2px
-  //  border-radius: inherit
-  //  background-color: $border-slider-btn-color
-    z-index: -1
   &::after
     content: ''
     font-family: $fa
