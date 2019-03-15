@@ -86,6 +86,18 @@ jQuery(document).ready(function($) {
     $(servicesSliderThumb.$wrapperEl).children().eq(currentItem).addClass('active');
   });
 
+  new Swiper ('.blog-hero__slider', {
+    spaceBetween: 50,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'fraction',
+    },
+  });
+
   // Parallax
   function simpleParallax(intensity, element) {
     $(window).scroll(function() {

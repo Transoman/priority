@@ -1,0 +1,53 @@
+.home-blockquote
+  padding: 200px 0 250px
+  +r(992)
+    padding: 100px 0 50px
+  +r(576)
+    padding: 50px 0 30px
+  &__wrap
+    max-width: 880px
+    margin: 0 auto
+    color: $hero-title-color
+  &__text
+    position: relative
+    margin-bottom: 40px
+    font-family: $ws-font
+    font-size: 48px
+    font-weight: 300
+    text-align: center
+    z-index: 1
+    +r(992)
+      font-size: 26px
+    +r(576)
+      font-size: 22px
+    &::before
+      content: ''
+      position: absolute
+      left: -30px
+      top: 0
+      width: 25px
+      height: 20px
+      background: url('images/general/icon-quote.svg') no-repeat center / contain
+      +r(576)
+        left: -10px
+  &__bottom
+    position: relative
+    z-index: 1
+    display: flex
+    flex-direction: column
+    text-align: right
+    font-family: $ws-font
+    font-weight: 400
+    &::before
+      content: ''
+      position: absolute
+      z-index: -1
+      top: 0
+      left: 30px
+      height: 1px
+      width: 120px
+      background-color: $accent
+      +r(576)
+        width: 50px
+        top: 10px
+        left: 0

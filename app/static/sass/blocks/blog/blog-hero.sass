@@ -1,0 +1,60 @@
+.blog-hero
+  padding-top: 135px
+  &__item
+    position: relative
+    padding-left: 200px
+  &__content
+    position: absolute
+    top: 50%
+    left: 0
+    transform: translateY(-50%)
+    max-width: 470px
+    p
+      max-width: 400px
+      font-family: Arial
+      font-size: 14px
+      font-weight: 400
+      color: $blog-desc-color
+      line-height: 1.6
+      letter-spacing: 0.25px
+  &__suptitle
+    font-size: 11px
+    font-weight: 500
+    text-transform: uppercase
+    letter-spacing: 6px
+    color: $accent
+  &__title
+    font-family: $ttl-medium-font
+    font-size: 58px
+
+    +trans
+    a
+      color: $blog-title-color
+      &:hover, &:focus
+        color: $accent
+  &__img
+    float: right
+    max-height: 550px
+  &__btns
+    position: absolute
+    z-index: 1
+    left: 0
+    bottom: 40px
+    width: 85px
+    padding: 0 20px
+    .swiper-pagination-fraction
+      position: static
+      color: #ebebeb
+      font-weight: 500
+      white-space: nowrap
+      .swiper-pagination-current
+        color: $accent
+      .swiper-pagination-total
+        color: #262626
+    .swiper-button-next,
+    .swiper-button-prev
+      border: 0
+      background: none
+      width: 10px
+      height: 15px
+      margin-top: -7.5px
