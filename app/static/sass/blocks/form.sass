@@ -1,1 +1,31 @@
-// Form
+input:not([type="submit"])
+  width: 100%
+  background-color: $input-bg
+  -webkit-border-radius: 5px
+  -moz-border-radius: 5px
+  border-radius: 5px
+  border: 0
+  padding: 15px 20px
+  font-size: 18px
+  font-weight: 400
+  color: #fff
+  +trans
+  &::placeholder
+    color: inherit
+  &:hover, &:focus
+    background-color: lighten($input-bg, 5%)
+    outline: none
+
+input[type="submit"],
+button[type="submit"]
+  background-color: $accent
+  color: #fff
+  border-radius: 5px
+  border: 0
+
+button[type="submit"]
+  padding: 15px 20px
+  +trans
+  &:hover, &:focus
+    background-color: lighten($accent, 5%)
+    outline: none

@@ -1,0 +1,28 @@
+.blog-blockquote
+  &__wrap
+    max-width: 630px
+    margin: 0 auto
+    text-align: center
+    font-family: $ttl-medium-font
+    font-weight: 500
+    font-size: 25px
+    color: $header-color
+    +r(576)
+      font-size: 22px
+    &::after
+      content: ''
+      display: block
+      width: 2px
+      height: 100px
+      margin: 45px auto 0
+      background-color: #d6b15b
+      +r(576)
+        height: 60px
+        margin: 20px auto 0
+  &__author
+    font-family: $main-font
+    font-size: 13px
+    font-weight: 500
+    font-style: normal
+    text-transform: uppercase
+    letter-spacing: 6px

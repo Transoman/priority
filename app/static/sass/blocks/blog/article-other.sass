@@ -1,0 +1,57 @@
+.article-other
+  padding: 30px 0 265px
+  background: url('images/general/blog-bg.jpg') no-repeat center bottom / cover
+  +r(1200)
+    padding-bottom: 175px
+  +r(767)
+    padding-bottom: 50px
+  .blog
+    &__item
+      padding: 0
+      margin-bottom: 110px
+      +r(767)
+        flex-direction: column
+        margin-bottom: 50px
+      &-left
+        width: auto
+        flex-grow: 1
+        flex-shrink: 1
+      &-right
+        position: static
+        width: 50%
+        flex-grow: 0
+        flex-shrink: 0
+        padding-right: 300px
+        +r(1200)
+          padding-right: 200px
+        +r(992)
+          padding-right: 0
+        +r(767)
+          width: 100%
+    &__content
+      padding: 0 0 0 40px
+      +r(767)
+        padding: 0
+    &__category
+      display: block
+      position: static
+      right: auto
+      top: auto
+      transform: none
+      margin-bottom: 40px
+      +r(767)
+        position: absolute
+        top: 0
+        right: 15px
+        transform: rotate(-90deg)
+    &__title
+      font-size: 30px
+      margin: 0 0 45px 40px
+      letter-spacing: 0.1px
+      line-height: 1.5
+      +r(767)
+        margin: 0 0 30px 0
+      +r(576)
+        font-size: 28px
+      &::after
+        display: none

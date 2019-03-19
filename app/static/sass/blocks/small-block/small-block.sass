@@ -1,5 +1,6 @@
 @import 'parallax'
 @import 'home-blockquote'
+@import 'pagination'
 
 .swiper-btns
   position: absolute
@@ -61,3 +62,26 @@
   width: 100%
   height: 100%
   object-fit: cover
+
+.read-more
+  position: relative
+  display: inline-block
+  padding-bottom: 20px
+  font-weight: 500
+  font-size: 13px
+  text-transform: uppercase
+  letter-spacing: 6px
+  color: $header-color
+  &::after
+    content: ''
+    position: absolute
+    bottom: 0
+    left: 0
+    height: 2px
+    width: 60%
+    background-color: $underline-color
+    +trans
+  &:hover, &:focus
+    color: $underline-color
+    &::after
+      width: 100%

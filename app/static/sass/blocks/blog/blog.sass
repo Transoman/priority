@@ -1,1 +1,146 @@
 @import 'blog-hero'
+@import 'blog-blockquote'
+@import 'article-other'
+@import 'article'
+
+.blog
+  &__item
+    position: relative
+    display: flex
+    align-items: center
+    padding: 60px 0
+    +r(767)
+      flex-direction: column-reverse
+      padding: 30px 0
+    &.format-video
+      .wp-block-video
+        +r(767)
+          padding-right: 20px
+      .blog
+        &__item
+          &-left
+            width: 42.73%
+            +r(767)
+              width: 100%
+        &__content
+          padding: 0 60px 0 110px
+          +r(1200)
+            padding-left: 30px
+          +r(767)
+            padding: 0
+        &__img-wrap
+          margin-bottom: 50px
+          +r(767)
+            padding-right: 0
+            margin-bottom: 30px
+          img
+            max-width: none
+            +r(1200)
+              width: calc(100% + 90px)
+            +r(767)
+              width: auto
+              max-width: 100%
+    &.format-image
+      +r(767)
+        flex-direction: column
+      .blog
+        &__item
+          &-left
+            width: 40.17%
+            margin-left: 200px
+            +r(1200)
+              margin-left: 130px
+            +r(992)
+              width: 50%
+              margin-left: 0
+            +r(767)
+              width: 100%
+          &-right
+            width: 40.17%
+            flex-grow: 0
+            +r(992)
+              width: 50%
+            +r(767)
+              width: 100%
+        &__category
+          right: calc(100% + 35px)
+          +r(767)
+            right: 15px
+        &__content
+          +r(1200)
+            padding-left: 70px
+            padding-right: 0
+          +r(992)
+            padding-left: 40px
+          +r(767)
+            padding: 0
+    &-right
+      position: relative
+      flex-grow: 1
+    &-left
+      position: relative
+      width: 37.6%
+      flex-shrink: 0
+      +r(992)
+        width: 50%
+      +r(767)
+        width: 100%
+    .wp-block-video
+      video
+        box-shadow: 0 3px 35px rgba(#000, 0.2)
+  &__content
+    padding: 0 40px 0 70px
+    +r(1200)
+      padding-left: 0
+    +r(767)
+      padding: 0
+  &__text
+    margin-bottom: 70px
+    font-family: Arial, sans-serif
+    font-size: 13px
+    color: rgba(#616161, 0.65)
+    line-height: 1.7
+    +r(992)
+      margin-bottom: 30px
+    +r(576)
+      margin-bottom: 20px
+  &__img-wrap
+    //img
+    //  max-height: 420px
+  &__title
+    font-family: $ttl-medium-font
+    font-weight: 500
+    font-size: 40px
+    +r(576)
+      font-size: 28px
+    &::after
+      content: ''
+      display: block
+      width: 25px
+      height: 2px
+      margin: 10px 0 30px
+      background-color: $underline-color
+      +r(576)
+        margin-bottom: 20px
+
+    a
+      color: $header-color
+      &:hover, &:focus
+        color: $accent
+  &__category
+    position: absolute
+    right: -20px
+    top: 0
+    transform: rotate(-90deg)
+    font-size: 13px
+    font-weight: 400
+    text-transform: uppercase
+    color: rgba($blog-title-color, 0.2)
+    letter-spacing: 6px
+    transform-origin: 100% 0
+    +r(767)
+      right: 15px
+  &__img-wrap
+    +r(767)
+      margin-bottom: 30px
+      padding-right: 20px
