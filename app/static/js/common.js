@@ -88,6 +88,10 @@ jQuery(document).ready(function($) {
 
   new Swiper ('.blog-hero__slider', {
     spaceBetween: 50,
+    speed: 1000,
+    autoplay: {
+      delay: 3000,
+    },
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -97,6 +101,67 @@ jQuery(document).ready(function($) {
       type: 'fraction',
     },
   });
+
+  new Swiper ('.images-carousel', {
+    spaceBetween: 50,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'fraction',
+    },
+  });
+
+  new Swiper ('.certificates__slider', {
+    slidesPerView: 4,
+    spaceBetween: 30,
+    navigation: {
+      nextEl: '.certificates__next',
+      prevEl: '.certificates__prev',
+    },
+  });
+
+
+  $('.tabs-inner__slider').each(function(i, el) {
+    var $this = $(this);
+    $this.addClass("tabs-inner__slider-" + i);
+    $this.find(".swiper-button-prev").addClass("button-prev-" + i);
+    $this.find(".swiper-button-next").addClass("button-next-" + i);
+    $this.find(".swiper-pagination").addClass("swiper-pagination-" + i);
+
+    var btnNext = '.button-next-' + i;
+    var btnPrev = '.button-prev-' + i;
+    var pagination = '.swiper-pagination-' + i;
+
+    var slider = 'slider' + i;
+
+    window[slider] = new Swiper ('.tabs-inner__slider-' + i, {
+      speed: 1000,
+      navigation: {
+        nextEl: btnNext,
+        prevEl: btnPrev,
+      },
+      pagination: {
+        el: pagination,
+        type: 'fraction',
+      },
+    });
+
+  });
+
+  // Tabs
+  $('.tabs').tabslet();
+  $('.tabs-inner').tabslet();
+
+  $('.tabs-inner__slider').each(function(i, el) {
+    var s = 'slider' + i;
+    window[s].update();
+  });
+
+
+
 
   // Parallax
   function simpleParallax(intensity, element) {
@@ -108,10 +173,18 @@ jQuery(document).ready(function($) {
   }
 
   simpleParallax(-5, $('.parallax-1'));
+  simpleParallax(-5, $('.parallax-2'));
+  simpleParallax(-5, $('.parallax-3'));
 
   // Select2
   $('.s-offices__select').select2({
     placeholder: 'PW offices'
+  });
+
+  $('.offices__select').select2();
+
+  $('.offices__select').on('select2:select', function (e) {
+    window.location.assign(e.params.data.id);
   });
 
   // Widget Slide

@@ -11,7 +11,8 @@ module.exports = function () {
             'node_modules/jquery/dist/jquery.min.js',
             'node_modules/simplebar/dist/simplebar.min.js',
             'node_modules/swiper/dist/js/swiper.min.js',
-            'node_modules/select2/dist/js/select2.min.js'
+            'node_modules/select2/dist/js/select2.min.js',
+            'node_modules/tabslet/jquery.tabslet.min.js'
             ])
             .pipe(gp.concat('libs.min.js'))
             .pipe($.gulp.dest(scriptsPATH.ouput));
@@ -23,7 +24,8 @@ module.exports = function () {
             'node_modules/jquery/dist/jquery.min.js',
             'node_modules/simplebar/dist/simplebar.min.js',
             'node_modules/swiper/dist/js/swiper.min.js',
-            'node_modules/select2/dist/js/select2.min.js'
+            'node_modules/select2/dist/js/select2.min.js',
+            'node_modules/tabslet/jquery.tabslet.min.js'
             ])
             .pipe(gp.concat('libs.min.js'))
             .pipe(gp.uglify())

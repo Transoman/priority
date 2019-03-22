@@ -1,0 +1,33 @@
+.images-carousel
+  padding-bottom: 60px
+  .swiper-slide
+    text-align: center
+  &__btns
+    position: relative
+    display: flex
+    justify-content: flex-end
+    align-items: center
+    padding: 15px 0
+  .swiper-pagination
+    position: static
+    width: auto
+    font-family: $ws-font
+    font-size: 30px
+    font-weight: 400
+    color: $dark-gray
+    margin-right: 60px
+    +r(767)
+      font-size: 22px
+  .swiper-button-prev,
+  .swiper-button-next
+    position: relative
+    margin: 0
+    background: none
+    border: 0
+    width: 13px
+    height: 17px
+  .swiper-button-next
+    right: auto
+  .swiper-button-prev
+    left: auto
+    margin-right: 30px

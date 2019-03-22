@@ -1,0 +1,57 @@
+.s-page
+  position: relative
+  z-index: 1
+  .hero__shape-container
+    +r(767)
+      display: none
+    &::before
+      top: -205px
+      left: 69.5%
+      +r(1200)
+        top: -425px
+    &::after
+      top: -195px
+      left: 75.7%
+      +r(1200)
+        top: -425px
+  .certificates
+    margin-bottom: 70px
+    &__title
+      +r(767)
+        color: #fff
+
+.page-wrap
+  position: relative
+  padding: 290px 0 35px
+  background:
+    repeat: no-repeat
+    position: center top
+    size: 100% auto
+  +r(1499)
+    padding-top: 210px
+  +r(767)
+    padding-top: 160px
+  h1
+    margin-bottom: 160px
+    color: #fff
+    text-transform: uppercase
+    +r(992)
+      text-align: center
+  .gradient
+    bottom: auto
+    height: 640px
+    background-image: linear-gradient(rgba($hero-bg-color, 0.8) 60%, rgba(#fff, 0) 100%)
+    z-index: 1
+  .container
+    position: relative
+    z-index: 1
+
+.page-content
+  p
+    line-height: 1.66
+    margin-bottom: 25px
+    &:last-child
+      margin-bottom: 0
+  .post-summary
+    +r(767)
+      color: $main-color

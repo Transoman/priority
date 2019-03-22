@@ -1,0 +1,82 @@
+.cta-form
+  h2
+    margin-bottom: 85px
+    +r(576)
+      margin-bottom: 45px
+  .gform_fields
+    display: flex
+    flex-wrap: wrap
+    margin: 0
+    padding: 0
+    list-style: none
+  .gfield_label
+    display: none
+  .gfield
+    position: relative
+    width: 50%
+    +r(576)
+      width: 100%
+    &:nth-child(1)
+      input
+        border-right: 0
+        +r(576)
+          border-right: 1px solid $bd-color
+          border-bottom: 0
+    &:nth-child(3)
+      width: 100%
+    input, textarea
+      background: none
+      border-radius: 0
+      border: 1px solid $bd-color
+      color: #71787e
+      &:hover, &:focus
+        background: none
+        border-color: darken($bd-color, 10%)
+      + label
+        display: none
+    textarea
+      border-top: 0
+      border-bottom: 0
+      resize: none
+  .validation_message
+    position: absolute
+    top: 5px
+    right: 5px
+    font-size: 12px
+    color: tomato
+  .validation_error
+    position: relative
+    padding: .75rem 1.25rem
+    margin-bottom: 1rem
+    border: 1px solid #f5c6cb
+    color: #721c24
+    background-color: #f8d7da
+  .gform_footer
+    position: relative
+    margin-top: -5px
+    padding-right: 50px
+    &::after
+      content: '\f054'
+      font-family: $fa
+      position: absolute
+      right: 0
+      top: 0
+      display: flex
+      align-items: center
+      justify-content: center
+      height: 100%
+      width: 50px
+      background-color: $accent
+      color: #fff
+  input[type="submit"]
+    width: 100%
+    padding: 15px 65px
+    text-align: right
+    border-radius: 0
+    background-color: $input-bg
+    text-transform: uppercase
+    font-weight: 400
+    +trans
+    &:hover, &:focus
+      background-color: $accent
+      outline: none

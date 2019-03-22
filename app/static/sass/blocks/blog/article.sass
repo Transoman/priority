@@ -1,10 +1,53 @@
-.single-post
-  .content
-    background: url('images/general/article-bg.jpg') no-repeat center top / 100% auto
-
 .post-summary
   position: relative
   padding: 0 45px 0 130px
   font-size: 26px
   color: #fff
   font-weight: 400
+  +r(1200)
+    padding-right: 0
+    font-size: 18px
+  +r(992)
+    max-width: 420px
+    margin: 0 auto
+    padding-left: 70px
+  &::before
+    content: ''
+    position: absolute
+    left: 50px
+    top: -20px
+    width: 50px
+    height: 50px
+    background: url('images/general/icon-article-sum.svg') no-repeat center / contain
+    +r(992)
+      left: 0
+
+.article
+  padding-top: 80px
+  .container
+    position: relative
+    &::before
+      content: ''
+      position: absolute
+      left: -50px
+      top: 0
+      height: 4px
+      width: 120px
+      background: linear-gradient(90deg, rgba($accent, 0), $accent)
+  p
+    line-height: 1.66
+  blockquote
+    h2
+      position: relative
+      z-index: 1
+      &::after
+        content: '“'
+        font-family: $ws-font
+        font-size: 190px
+        line-height: 1
+        color: $accent
+        position: absolute
+        top: -40px
+        z-index: -1
+    p
+      font-weight: 400

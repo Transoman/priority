@@ -52,6 +52,17 @@ a
 h1, h2, h3, h4, h5, h6
   font-family: $ws-font
 
+h1
+  font-size: 84px
+  color: $hero-shape-color
+  font-weight: 300
+  +r(1200)
+    font-size: 64px
+  +r(767)
+    font-size: 54px
+  +r(576)
+    font-size: 44px
+
 h2
   font-size: 56px
   font-weight: 300
@@ -121,3 +132,10 @@ section
   flex: 1 0 auto
 .footer
   flex: 0 0 auto
+
+.single-post, .page-template-default
+  .content
+    background: url('images/general/article-bg.jpg') no-repeat center top / 100% auto
+.page-template-default
+  .content
+    background-position: center 400px
