@@ -31,6 +31,7 @@
     padding-top: 210px
   +r(767)
     padding-top: 160px
+    background-size: auto 40%
   h1
     margin-bottom: 160px
     color: #fff
@@ -42,11 +43,27 @@
     height: 640px
     background-image: linear-gradient(rgba($hero-bg-color, 0.8) 60%, rgba(#fff, 0) 100%)
     z-index: 1
+    +r(992)
+      height: 540px
+    +r(767)
+      height: 440px
   .container
     position: relative
     z-index: 1
+  &--priority
+    h1
+      margin-bottom: 60px
 
 .page-content
+  position: relative
+  &::before
+    content: ''
+    position: absolute
+    top: -20px
+    left: -50px
+    width: 120px
+    height: 4px
+    background-image: linear-gradient(to right, rgba($accent, 0), rgba($accent, 1))
   p
     line-height: 1.66
     margin-bottom: 25px

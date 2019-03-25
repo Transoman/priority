@@ -1,0 +1,107 @@
+.team-list
+  position: relative
+  z-index: 3
+  display: flex
+  flex-wrap: wrap
+  margin-top: 160px
+  padding: 0 70px
+  +r(1200)
+    padding: 0
+  +r(992)
+    margin-top: 100px
+  +r(576)
+    margin-top: 50px
+  &__item
+    position: relative
+    width: 33.33%
+    margin: 0
+    overflow: hidden
+    +r(992)
+      width: 50%
+    +r(767)
+      width: 100%
+    &:hover
+      .team-list
+        &__content
+          background-color: rgba(#000, 0.8)
+          > div
+            transform: translate3d(0, 0, 0)
+            & > *
+              opacity: 1
+    img
+      width: 100%
+    &--static
+      .team-list
+        &__content
+          position: static
+          top: auto
+          right: auto
+          bottom: auto
+          left: auto
+          padding: 60px 80px 30px 50px
+          color: $header-color
+          +r(1200)
+            padding: 60px 50px 30px
+          +r(576)
+            padding: 20px
+          > div
+            display: flex
+            flex-direction: column
+            height: 100%
+            justify-content: space-between
+            transform: none
+        &__name
+          text-transform: uppercase
+        &__position, &__text, &__social
+          opacity: 1
+        &__text
+          margin-bottom: 0
+      &:hover
+        .team-list
+          &__content
+            background: none
+  &__content
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    padding: 20px 20px 10px
+    font-family: $ws-font
+    font-size: 14px
+    font-weight: 400
+    color: #fff
+    backface-visibility: hidden
+    +trans(background, 0.35s)
+    > div
+      height: 100%
+      +trans(transform, 0.35s)
+      transform: translate3d(0, calc(100% - 30px), 0)
+  &__name
+    font-size: 18px
+  &__position
+    display: block
+    margin-bottom: 15px
+    opacity: 0
+    +trans(opacity, 0.35s)
+  &__text
+    margin-bottom: 25px
+    height: 145px
+    opacity: 0
+    +trans(opacity, 0.35s)
+    +r(1200)
+      height: 120px
+    +r(480)
+      height: 100px
+    p
+      &:last-child
+        margin-bottom: 0
+  &__social
+    border-top: 5px solid #46b0e4
+    padding-top: 10px
+    justify-content: flex-end
+    opacity: 0
+    +trans(opacity, 0.35s)
+    a
+      color: #fff
+      border-color: #fff

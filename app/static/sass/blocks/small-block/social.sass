@@ -1,0 +1,22 @@
+.social
+  margin: 0
+  padding: 0
+  list-style: none
+  display: flex
+  align-items: center
+  & > *:not(:last-child)
+    margin-right: 5px
+  a
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 30px
+    height: 30px
+    border: 2px solid #C1C1C1
+    border-radius: 50%
+    text-align: center
+    font-size: 14px
+    color: #C1C1C1
+    &:hover, &:focus
+      color: $accent
+      border-color: $accent

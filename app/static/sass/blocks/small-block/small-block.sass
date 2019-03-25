@@ -1,6 +1,8 @@
 @import 'parallax'
 @import 'home-blockquote'
 @import 'pagination'
+@import 'social'
+@import 'alert'
 
 .swiper-btns
   position: absolute
@@ -85,3 +87,43 @@
     color: $underline-color
     &::after
       width: 100%
+
+#response
+  position: relative
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    background-color: rgba(#fff, 0.5)
+    opacity: 0
+    visibility: hidden
+    z-index: 1
+    +trans
+  &::after
+    content: ''
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 30px
+    height: 30px
+    border-radius: 50%
+    border: 3px solid $accent
+    border-top-color: transparent
+    border-right-color: transparent
+    animation: spin 1s linear infinite
+    opacity: 0
+    visibility: hidden
+  &.is-active
+    &::before, &::after
+      opacity: 1
+      visibility: visible
+
+@keyframes spin
+  0%
+    transform: rotate(0)
+  100%
+    transform: rotate(360deg)

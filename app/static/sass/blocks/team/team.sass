@@ -1,0 +1,27 @@
+@import 'team-list'
+
+.team
+  padding: 130px 0
+  background: url('images/general/article-2-bg.jpg') no-repeat center top
+  +r(576)
+    padding: 70px 0
+  h2
+    position: relative
+    z-index: 1
+    margin-bottom: 0
+    line-height: 1
+    +r(576)
+      margin-bottom: 30px
+      text-align: center
+    &::after
+      content: ''
+      position: absolute
+      top: -20px
+      width: 35px
+      height: 35px
+      background: url('images/general/icon-square.svg') no-repeat center / contain
+      transform: rotate(45deg) translate(10px, -10px)
+      z-index: -1
+  .s-offices__select
+    +r(576)
+      max-width: none

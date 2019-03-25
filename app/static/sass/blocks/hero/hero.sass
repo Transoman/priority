@@ -203,20 +203,28 @@
   &--office
     padding-top: 290px
     padding-bottom: 165px
+    +r(992)
+      padding-top: 160px
+      padding-bottom: 85px
     h1
       text-transform: uppercase
       color: #fff
+      +r(992)
+        margin-bottom: 20px
     .hero-content
       position: relative
       z-index: 1
+      +r(992)
+        text-align: center
     .hero__shape-container
       &::after
         left: 76%
+        +r(992)
+          left: 43%
       &::before
         left: 70.4%
-    .gradient
-      bottom: auto
-      height: 50em
+        +r(992)
+          left: 34.4%
 
 .gradient
   position: absolute

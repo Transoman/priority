@@ -45,6 +45,7 @@ jQuery(document).ready(function($) {
 
   var servicesSliderThumb = new Swiper ('.services-slider-thumb ', {
     slidesPerView: 2,
+    speed: 1000,
     navigation: {
       nextEl: '.services-slider-thumb__next',
       prevEl: '.services-slider-thumb__prev',
@@ -58,6 +59,10 @@ jQuery(document).ready(function($) {
 
   var servicesSlider = new Swiper ('.services-slider', {
     spaceBetween: 50,
+    speed: 1000,
+    autoplay: {
+      delay: 3000,
+    },
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -121,6 +126,12 @@ jQuery(document).ready(function($) {
       nextEl: '.certificates__next',
       prevEl: '.certificates__prev',
     },
+    breakpoints: {
+      480: {
+        slidesPerView: 3,
+        spaceBetween: 20
+      },
+    }
   });
 
 
@@ -160,9 +171,6 @@ jQuery(document).ready(function($) {
     window[s].update();
   });
 
-
-
-
   // Parallax
   function simpleParallax(intensity, element) {
     $(window).scroll(function() {
@@ -181,11 +189,35 @@ jQuery(document).ready(function($) {
     placeholder: 'PW offices'
   });
 
+  $('.s-offices__select').on('select2:select', function (e) {
+    var termId = e.params.data.id;
+    getTeams(termId);
+    // window.location.assign(e.params.data.id);
+  });
+
   $('.offices__select').select2();
 
   $('.offices__select').on('select2:select', function (e) {
     window.location.assign(e.params.data.id);
   });
+
+  var getTeams = function(id) {
+    $.ajax({
+      type: "POST",
+      url: window.wp_data.ajax_url,
+      data : {
+        action : 'get_ajax_teams',
+        id: id
+      },
+      beforeSend: function() {
+        $('#response').addClass('is-active');
+      },
+      success: function (data) {
+        $('#response').html(data);
+        $('#response').removeClass('is-active');
+      }
+    });
+  };
 
   // Widget Slide
   var mediaFooterToggle = window.matchMedia('(max-width: 576px)');

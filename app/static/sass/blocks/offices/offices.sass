@@ -4,7 +4,7 @@
   position: absolute
   top: 0
   left: 0
-  height: 910px
+  height: 100%
   width: 100%
   opacity: 0.8
   &::after
@@ -18,10 +18,16 @@
     width: 100%
     height: 700px
 
+.hero
+  & + .offices
+    margin-top: -190px
+
 .offices
   position: relative
-  margin-top: -190px
   z-index: 2
+  +r(992)
+    margin-top: 0
+    padding-top: 50px
   &__dropdown
     .select2-container
       &:focus
@@ -43,6 +49,7 @@
           padding-right: 50px
           color: #fff
           line-height: 1
+          text-align: left
         .select2-selection__arrow
           background-color: $accent
           width: 50px
@@ -64,7 +71,6 @@
           .select2-selection__arrow
             b
               transform: translate(-50%, -50%) rotate(180deg)
-
   &__select
     max-width: 420px
     width: 100%
@@ -75,6 +81,11 @@
     font-size: 14px
     font-weight: 400
     color: #fff
+    text-align: left
+    +r(1499)
+      margin-top: 75px
+    +r(480)
+      padding-left: 70px
     &::before
       content: ''
       position: absolute
@@ -83,6 +94,8 @@
       width: 50px
       height: 50px
       background: url('images/general/icon-article-sum.svg') no-repeat center
+      +r(480)
+        left: 0
     p
       margin-bottom: 5px
     &-bottom
@@ -105,8 +118,18 @@
       display: flex
       padding-top: 15px
       border-bottom: 1px solid #E9E9E9
+      white-space: nowrap
+      +r(576)
+        flex-direction: column
+        text-align: center
       & > *:not(:last-child)
         margin-right: 140px
+        +r(1200)
+          margin-right: 110px
+        +r(767)
+          margin-right: 50px
+        +r(576)
+          margin-right: 0
     &-col
       display: flex
       flex-direction: column
@@ -123,9 +146,12 @@
       position: relative
       margin: 0 0 0 auto
       padding: 0 0 20px
-      list-style: none
-      display: flex
-      align-items: center
+      //list-style: none
+      //display: flex
+      //align-items: center
+      +r(576)
+        margin-left: 0
+        justify-content: center
       &::after
         content: ''
         position: absolute
@@ -133,19 +159,19 @@
         top: 100%
         border-bottom: 3px solid $accent
         width: 100%
-      & > *:not(:last-child)
-        margin-right: 5px
-      a
-        display: flex
-        align-items: center
-        justify-content: center
-        width: 30px
-        height: 30px
-        border: 2px solid #C1C1C1
-        border-radius: 50%
-        text-align: center
-        font-size: 14px
-        color: #C1C1C1
-        &:hover, &:focus
-          color: $accent
-          border-color: $accent
+      //& > *:not(:last-child)
+      //  margin-right: 5px
+      //a
+      //  display: flex
+      //  align-items: center
+      //  justify-content: center
+      //  width: 30px
+      //  height: 30px
+      //  border: 2px solid #C1C1C1
+      //  border-radius: 50%
+      //  text-align: center
+      //  font-size: 14px
+      //  color: #C1C1C1
+      //  &:hover, &:focus
+      //    color: $accent
+      //    border-color: $accent
