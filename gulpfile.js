@@ -28,9 +28,9 @@ $.gulp.task('dev', $.gulp.series(
 ));
 
 $.gulp.task('build', $.gulp.series(
-    'clean',
+    // 'clean',
     $.gulp.parallel(
-        'pug',
+        // 'pug',
         'fonts',
         'styles:build-min',
         'img:build',

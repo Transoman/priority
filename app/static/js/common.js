@@ -166,9 +166,17 @@ jQuery(document).ready(function($) {
   $('.tabs').tabslet();
   $('.tabs-inner').tabslet();
 
-  $('.tabs-inner__slider').each(function(i, el) {
-    var s = 'slider' + i;
-    window[s].update();
+  var updateSlider = function() {
+    $('.tabs-inner__slider').each(function(i, el) {
+      var s = 'slider' + i;
+      window[s].update();
+    });
+  };
+
+  updateSlider();
+
+  $('.tabs-inner__list li').click(function() {
+    updateSlider();
   });
 
   // Parallax
@@ -192,7 +200,6 @@ jQuery(document).ready(function($) {
   $('.s-offices__select').on('select2:select', function (e) {
     var termId = e.params.data.id;
     getTeams(termId);
-    // window.location.assign(e.params.data.id);
   });
 
   $('.offices__select').select2();
